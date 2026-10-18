@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://globaltkg.github.io/vettedmapleads/sitemap.xml
