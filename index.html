@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B0F19">
+<meta name="description" content="Search public business, contractor, and registry records across all 50 U.S. states. Source types and contact details vary by location.">
+  <meta property="og:title" content="VettedMapLeads | Local Business Prospecting">
+  <meta property="og:description" content="Search subscriber-only public business and contractor records across all 50 states. See source coverage and data limits.">
+  <meta property="og:type" content="website">
+  <title>VettedMapLeads | Local Business Prospecting</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230B0F19'/%3E%3Cpath d='M13 17h9l10 29 10-29h9L37 49H27z' fill='%2310B981'/%3E%3C/svg%3E">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0B0F19',
+            panel: '#111827',
+            emerald: '#10B981',
+            mint: '#A7F3D0'
+          },
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I find local businesses that don't have a website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "VettedMapLeads does not identify businesses without websites. Subscribers can search public business, contractor, and certification registry records across all 50 states, plus Washington, D.C., Puerto Rico, Guam, and the U.S. Virgin Islands as additional jurisdictions, with phone numbers where published, then independently check each business website."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the fastest way to get web design clients with zero budget?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with permitted public business records, verify a prospect’s website and service fit, then send a relevant individual offer. VettedMapLeads saves research time with searchable registry records across all 50 states, plus Washington, D.C., Puerto Rico, Guam, and the U.S. Virgin Islands as additional jurisdictions; contact fields vary by source."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I download a pre-vetted Google Maps lead list in a CSV format?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "VettedMapLeads does not provide Google Maps exports. Its private subscriber dashboard offers searchable public business, contractor, certification, and facility records across all 50 states. Source types and contact fields vary by location."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do marketing agencies target local businesses with bad online reviews?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use sources whose terms permit review analysis and verify the business before outreach. VettedMapLeads does not supply review ratings; its subscriber feed combines public business and contractor registries, not review ratings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I scrape business phone numbers and emails from Google Maps on autopilot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Do not assume automated extraction is allowed. Use a source whose terms permit collection and reuse, and follow privacy and outreach rules. VettedMapLeads does not scrape Google Maps; its subscriber feed uses public business and contractor registries across all 50 states plus public, non-sensitive EPA facility records marked with its small-business indicator in Washington, D.C., Puerto Rico, Guam, and the U.S. Virgin Islands. These facilities are not contractor-verified and have no phone or email."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I find roofers, plumbers, and contractors who need SEO services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Search the subscriber feed by company, city, phone, or specialty. VettedMapLeads covers up to 500 records per connected state source, including Delaware prequalified public-works contractors, New Jersey certified businesses, Chicago-issued Illinois business licenses, Minnesota DLI contractor licenses and registrations, and Pennsylvania registered businesses; it does not confirm that a business needs SEO. Illinois and Pennsylvania sources do not publish phone or email fields; Minnesota phone values appear where published, while business emails were blank in the files checked October 15, 2026."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    html { scroll-behavior: smooth; background: #0B0F19; }
+    body { margin: 0; min-width: 320px; background: #0B0F19; color: #F8FAFC; }
+    a { color: inherit; }
+    .page-shell { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .surface { background: linear-gradient(145deg, rgba(17,24,39,.96), rgba(15,23,42,.84)); border: 1px solid rgba(148,163,184,.16); box-shadow: 0 22px 70px rgba(0,0,0,.23); }
+    .soft-grid { background-image: radial-gradient(rgba(16,185,129,.16) 1px, transparent 1px); background-size: 24px 24px; }
+    .hero-glow { background: radial-gradient(ellipse at 18% 0%, rgba(16,185,129,.12), transparent 43%); }
+    .eyebrow { color: #6EE7B7; font-size: .78rem; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+    .pill { border: 1px solid rgba(16,185,129,.25); background: rgba(16,185,129,.09); color: #A7F3D0; }
+    .btn-primary { background: #10B981; color: #04140F; box-shadow: 0 10px 32px rgba(16,185,129,.18); transition: transform .2s ease, background .2s ease, box-shadow .2s ease; }
+    .btn-primary:hover { background: #34D399; transform: translateY(-2px); box-shadow: 0 14px 36px rgba(16,185,129,.25); }
+    .btn-secondary { border: 1px solid rgba(148,163,184,.28); background: rgba(15,23,42,.68); transition: background .2s ease, border-color .2s ease; }
+    .btn-secondary:hover { background: rgba(30,41,59,.9); border-color: rgba(16,185,129,.5); }
+    .lead-row + .lead-row { border-top: 1px solid rgba(148,163,184,.12); }
+    .status-tag { border: 1px solid rgba(251,146,60,.26); background: rgba(251,146,60,.09); color: #FDBA74; }
+    .pricing-card { border-radius: 24px; background: rgba(17,24,39,.88); border: 1px solid rgba(148,163,184,.17); box-shadow: 0 25px 70px rgba(0,0,0,.2); }
+    .premium-card { border: 1.5px solid rgba(16,185,129,.82); box-shadow: 0 0 0 1px rgba(16,185,129,.11), 0 28px 85px rgba(16,185,129,.12); }
+    .token-input { background: #0B0F19; border: 1px solid rgba(148,163,184,.26); transition: border-color .2s ease, box-shadow .2s ease; }
+    .token-input:focus { border-color: #10B981; outline: none; box-shadow: 0 0 0 3px rgba(16,185,129,.15); }
+    .notice { border: 1px solid rgba(251,146,60,.42); background: linear-gradient(105deg, rgba(124,45,18,.72), rgba(67,32,22,.86)); color: #FFEDD5; }
+    .fade-in { animation: fadeInUp .55s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    .focus-ring:focus-visible { outline: 3px solid #6EE7B7; outline-offset: 4px; }
+    .faq-panel { grid-template-rows: 0fr; opacity: 0; }
+    .faq-panel.is-open { grid-template-rows: 1fr; opacity: 1; }
+    .faq-panel > div { min-height: 0; overflow: hidden; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+    @media (max-width: 640px) {
+      .page-shell { width: min(100% - 32px, 1160px); }
+      .mobile-table { min-width: 630px; }
+      .hero-title { font-size: clamp(2.45rem, 12vw, 3.45rem); letter-spacing: -.055em; }
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <header class="border-b border-white/10">
+    <div class="page-shell flex h-[76px] items-center justify-between">
+      <a class="focus-ring flex items-center gap-3 rounded-lg" href="#top" aria-label="VettedMapLeads home">
+        <span class="grid h-10 w-10 place-items-center rounded-xl bg-emerald text-lg font-black tracking-tight text-ink">V</span>
+        <span class="text-lg font-bold tracking-tight">VettedMap<span class="text-emerald">Leads</span></span>
+      </a>
+      <nav class="hidden items-center gap-8 text-sm font-medium text-slate-300 sm:flex" aria-label="Main navigation">
+        <a class="focus-ring rounded hover:text-white" href="#state-data">State data</a>
+        <a class="focus-ring rounded hover:text-white" href="#lead-access">Subscriber access</a>
+        <a class="focus-ring rounded hover:text-white" href="#pricing">Pricing</a>
+        <a class="focus-ring rounded hover:text-white" href="advertise.html" target="_blank" rel="noopener">Business Spotlight · $15/month</a>
+        <a class="focus-ring rounded hover:text-white" href="primesteam-carpet-care.html">Community spotlight</a>
+        <a class="focus-ring rounded hover:text-white" href="contact.html">Contact</a>
+      </nav>
+      <a class="focus-ring rounded-full border border-white/15 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-emerald/60 hover:text-white" href="#pricing">Get access</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero-glow relative overflow-hidden">
+      <div class="page-shell grid items-center gap-14 py-20 md:grid-cols-[1.08fr_.92fr] md:py-28">
+        <div class="relative z-10">
+          <div class="pill mb-6 inline-flex items-center gap-2 rounded-full px-3.5 py-2 text-xs font-bold tracking-wide">
+            <span class="h-2 w-2 rounded-full bg-emerald shadow-[0_0_12px_#10B981]" aria-hidden="true"></span>
+            LEAD SOURCES IN ALL 50 STATES + 4 EXTRA JURISDICTIONS
+          </div>
+          <h1 class="hero-title max-w-3xl text-5xl font-semibold leading-[1.06] tracking-[-.055em] text-white md:text-[3.8rem]">Find Better Local Business Prospects.</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300">Search public business, contractor, certification, and environmental-facility records across all 50 states. The mix of sources and available contact fields varies by location, and some records are facilities rather than verified contractors. Browse up to 500 records per connected source; see <a class="text-mint underline underline-offset-4" href="coverage.html">coverage and data notes</a> for details. Records refresh every 36 hours when a subscriber visits after the refresh window.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a class="btn-primary focus-ring inline-flex min-h-14 items-center justify-center rounded-xl px-6 text-base font-bold" href="#lead-access">See subscriber access</a>
+            <button class="btn-secondary focus-ring inline-flex min-h-14 items-center justify-center rounded-xl px-6 text-base font-semibold text-slate-100" type="button" data-download-sba-csv>Download SBA State Statistics CSV</button>
+            <a class="btn-secondary focus-ring inline-flex min-h-14 items-center justify-center rounded-xl px-6 text-base font-semibold text-slate-100" href="#pricing">See agency pricing</a>
+            <a class="focus-ring inline-flex min-h-14 items-center justify-center rounded-xl border border-emerald/30 px-6 text-base font-semibold text-mint transition hover:border-emerald hover:text-white" href="advertise.html" target="_blank" rel="noopener">Business Spotlight · $15/month</a>
+          </div>
+          <a href="https://vettedmapleads-paypal-hook.kimii-gibs110.chatgpt.site/checkout" class="focus-ring mt-4 inline-block rounded text-sm font-semibold text-mint underline decoration-emerald/50 underline-offset-4 hover:text-white">Already subscribed? Open secure access</a>
+          <div class="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-400">
+            <span class="flex items-center gap-2"><span class="text-emerald" aria-hidden="true">✓</span> Built for agencies and consultants</span>
+            <span class="flex items-center gap-2"><span class="text-emerald" aria-hidden="true">✓</span> Business contact records reserved for subscribers</span>
+          </div>
+        </div>
+
+        <div class="relative mx-auto w-full max-w-[500px]">
+          <div class="absolute -inset-5 rounded-[36px] bg-emerald/10 blur-3xl" aria-hidden="true"></div>
+          <div class="surface soft-grid relative rounded-[28px] p-5 sm:p-7">
+            <div class="mb-6 flex items-start justify-between gap-4"><div><p class="eyebrow">SBA state data · 2025</p><h2 class="mt-2 text-xl font-semibold tracking-tight">Small-business landscape</h2></div><span class="rounded-lg border border-white/10 bg-slate-900/70 px-3 py-2 text-xs font-semibold text-slate-300">OFFICIAL FIGURES</span></div>
+            <div class="space-y-3">
+              <div class="rounded-2xl border border-white/10 bg-slate-950/55 p-4">
+                <div class="flex items-center justify-between gap-3"><span class="font-semibold">California</span><span class="status-tag rounded-full px-2.5 py-1 text-xs font-semibold">4,340,784 small businesses</span></div>
+                <div class="mt-3 flex items-center justify-between text-sm text-slate-400"><span>2025 SBA statistics</span><span>Employment share <b class="text-emerald">47.4%</b></span></div>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-slate-950/55 p-4">
+                <div class="flex items-center justify-between gap-3"><span class="font-semibold">Texas</span><span class="status-tag rounded-full px-2.5 py-1 text-xs font-semibold">3,517,343 small businesses</span></div>
+                <div class="mt-3 flex items-center justify-between text-sm text-slate-400"><span>2025 SBA statistics</span><span>Employment share <b class="text-emerald">44.4%</b></span></div>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-slate-950/55 p-4">
+                <div class="flex items-center justify-between gap-3"><span class="font-semibold">Florida</span><span class="status-tag rounded-full px-2.5 py-1 text-xs font-semibold">3,485,976 small businesses</span></div>
+                <div class="mt-3 flex items-center justify-between text-sm text-slate-400"><span>2025 SBA statistics</span><span>Employment share <b class="text-emerald">39.6%</b></span></div>
+              </div>
+            </div>
+            <div class="mt-5 rounded-xl border border-emerald/20 bg-emerald/[.07] px-4 py-3 text-sm text-slate-300">Aggregate state statistics · not individual business leads</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="state-data" class="border-y border-white/10 bg-slate-950/35 py-20 md:py-24" aria-labelledby="stateDataTitle">
+      <div class="page-shell">
+        <div class="mx-auto max-w-3xl text-center"><p class="eyebrow">Official U.S. market statistics</p><h2 id="stateDataTitle" class="mt-4 text-3xl font-semibold tracking-[-.04em] sm:text-4xl">U.S. small-business statistics by state</h2><p class="mt-4 text-base leading-7 text-slate-400">Search the actual SBA 2025 state dataset for all 50 states and Washington, D.C. These are aggregate figures, not named companies, contact records, or sales leads.</p></div>
+        <div class="surface mx-auto mt-8 max-w-6xl rounded-2xl p-5 sm:p-6">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"><div class="w-full sm:max-w-sm"><label for="stateFilter" class="text-sm font-semibold text-slate-200">Find a state</label><input id="stateFilter" class="token-input focus-ring mt-2 min-h-12 w-full rounded-xl px-4 text-base text-white placeholder:text-slate-500" type="search" placeholder="Type a state name" autocomplete="off"></div><button class="btn-primary focus-ring min-h-12 rounded-xl px-5 font-bold" type="button" data-download-sba-csv>Download full statistics CSV</button></div>
+          <p id="stateDataStatus" class="mt-4 text-sm text-slate-400" role="status" aria-live="polite">Showing all 51 locations (50 states and Washington, D.C.).</p>
+          <div class="mt-4 overflow-x-auto"><table class="w-full min-w-[760px] text-sm text-slate-300"><caption class="sr-only">U.S. Small Business Administration State Small Business Statistics 2025</caption><thead class="text-xs uppercase tracking-wide text-slate-400"><tr><th scope="col" class="px-4 py-3 text-left">State / district</th><th scope="col" class="px-4 py-3 text-right">Small businesses</th><th scope="col" class="px-4 py-3 text-right">Employment share</th><th scope="col" class="px-4 py-3 text-right">Establishments opened</th><th scope="col" class="px-4 py-3 text-right">Net new jobs</th></tr></thead><tbody id="stateStatsTable">
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Alabama</th><td class="px-4 py-3 text-right tabular-nums">465,610</td><td class="px-4 py-3 text-right tabular-nums">46.0%</td><td class="px-4 py-3 text-right tabular-nums">14,917</td><td class="px-4 py-3 text-right tabular-nums">4,814</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Alaska</th><td class="px-4 py-3 text-right tabular-nums">77,814</td><td class="px-4 py-3 text-right tabular-nums">54.2%</td><td class="px-4 py-3 text-right tabular-nums">2,065</td><td class="px-4 py-3 text-right tabular-nums">4,814</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Arizona</th><td class="px-4 py-3 text-right tabular-nums">706,640</td><td class="px-4 py-3 text-right tabular-nums">42.6%</td><td class="px-4 py-3 text-right tabular-nums">26,603</td><td class="px-4 py-3 text-right tabular-nums">80,016</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Arkansas</th><td class="px-4 py-3 text-right tabular-nums">292,728</td><td class="px-4 py-3 text-right tabular-nums">46.1%</td><td class="px-4 py-3 text-right tabular-nums">9,630</td><td class="px-4 py-3 text-right tabular-nums">14,245</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">California</th><td class="px-4 py-3 text-right tabular-nums">4,340,784</td><td class="px-4 py-3 text-right tabular-nums">47.4%</td><td class="px-4 py-3 text-right tabular-nums">132,020</td><td class="px-4 py-3 text-right tabular-nums">86,885</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Colorado</th><td class="px-4 py-3 text-right tabular-nums">730,887</td><td class="px-4 py-3 text-right tabular-nums">48.6%</td><td class="px-4 py-3 text-right tabular-nums">30,729</td><td class="px-4 py-3 text-right tabular-nums">6,384</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Connecticut</th><td class="px-4 py-3 text-right tabular-nums">381,129</td><td class="px-4 py-3 text-right tabular-nums">48.1%</td><td class="px-4 py-3 text-right tabular-nums">13,718</td><td class="px-4 py-3 text-right tabular-nums">10,840</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Delaware</th><td class="px-4 py-3 text-right tabular-nums">111,346</td><td class="px-4 py-3 text-right tabular-nums">50.6%</td><td class="px-4 py-3 text-right tabular-nums">4,378</td><td class="px-4 py-3 text-right tabular-nums">5,323</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">District of Columbia</th><td class="px-4 py-3 text-right tabular-nums">82,666</td><td class="px-4 py-3 text-right tabular-nums">49.1%</td><td class="px-4 py-3 text-right tabular-nums">5,817</td><td class="px-4 py-3 text-right tabular-nums">2,678</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Florida</th><td class="px-4 py-3 text-right tabular-nums">3,485,976</td><td class="px-4 py-3 text-right tabular-nums">39.6%</td><td class="px-4 py-3 text-right tabular-nums">100,178</td><td class="px-4 py-3 text-right tabular-nums">139,887</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Georgia</th><td class="px-4 py-3 text-right tabular-nums">1,374,972</td><td class="px-4 py-3 text-right tabular-nums">42.5%</td><td class="px-4 py-3 text-right tabular-nums">38,952</td><td class="px-4 py-3 text-right tabular-nums">45,950</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Hawaii</th><td class="px-4 py-3 text-right tabular-nums">144,375</td><td class="px-4 py-3 text-right tabular-nums">49.6%</td><td class="px-4 py-3 text-right tabular-nums">4,265</td><td class="px-4 py-3 text-right tabular-nums">129</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Idaho</th><td class="px-4 py-3 text-right tabular-nums">207,670</td><td class="px-4 py-3 text-right tabular-nums">56.0%</td><td class="px-4 py-3 text-right tabular-nums">10,350</td><td class="px-4 py-3 text-right tabular-nums">17,233</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Illinois</th><td class="px-4 py-3 text-right tabular-nums">1,353,957</td><td class="px-4 py-3 text-right tabular-nums">43.7%</td><td class="px-4 py-3 text-right tabular-nums">33,940</td><td class="px-4 py-3 text-right tabular-nums">14,131</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Indiana</th><td class="px-4 py-3 text-right tabular-nums">591,671</td><td class="px-4 py-3 text-right tabular-nums">43.2%</td><td class="px-4 py-3 text-right tabular-nums">15,661</td><td class="px-4 py-3 text-right tabular-nums">23,008</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Iowa</th><td class="px-4 py-3 text-right tabular-nums">289,962</td><td class="px-4 py-3 text-right tabular-nums">46.0%</td><td class="px-4 py-3 text-right tabular-nums">8,689</td><td class="px-4 py-3 text-right tabular-nums">12,573</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Kansas</th><td class="px-4 py-3 text-right tabular-nums">273,419</td><td class="px-4 py-3 text-right tabular-nums">48.9%</td><td class="px-4 py-3 text-right tabular-nums">10,314</td><td class="px-4 py-3 text-right tabular-nums">10,601</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Kentucky</th><td class="px-4 py-3 text-right tabular-nums">393,860</td><td class="px-4 py-3 text-right tabular-nums">42.6%</td><td class="px-4 py-3 text-right tabular-nums">12,964</td><td class="px-4 py-3 text-right tabular-nums">22,043</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Louisiana</th><td class="px-4 py-3 text-right tabular-nums">511,235</td><td class="px-4 py-3 text-right tabular-nums">54.1%</td><td class="px-4 py-3 text-right tabular-nums">11,047</td><td class="px-4 py-3 text-right tabular-nums">5,470</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Maine</th><td class="px-4 py-3 text-right tabular-nums">160,215</td><td class="px-4 py-3 text-right tabular-nums">54.5%</td><td class="px-4 py-3 text-right tabular-nums">6,025</td><td class="px-4 py-3 text-right tabular-nums">7,026</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Maryland</th><td class="px-4 py-3 text-right tabular-nums">696,710</td><td class="px-4 py-3 text-right tabular-nums">47.9%</td><td class="px-4 py-3 text-right tabular-nums">17,678</td><td class="px-4 py-3 text-right tabular-nums">16,613</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Massachusetts</th><td class="px-4 py-3 text-right tabular-nums">756,096</td><td class="px-4 py-3 text-right tabular-nums">44.7%</td><td class="px-4 py-3 text-right tabular-nums">21,452</td><td class="px-4 py-3 text-right tabular-nums">4,824</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Michigan</th><td class="px-4 py-3 text-right tabular-nums">983,079</td><td class="px-4 py-3 text-right tabular-nums">47.7%</td><td class="px-4 py-3 text-right tabular-nums">24,975</td><td class="px-4 py-3 text-right tabular-nums">27,947</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Minnesota</th><td class="px-4 py-3 text-right tabular-nums">560,428</td><td class="px-4 py-3 text-right tabular-nums">45.8%</td><td class="px-4 py-3 text-right tabular-nums">15,229</td><td class="px-4 py-3 text-right tabular-nums">617</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Mississippi</th><td class="px-4 py-3 text-right tabular-nums">294,768</td><td class="px-4 py-3 text-right tabular-nums">47.0%</td><td class="px-4 py-3 text-right tabular-nums">6,915</td><td class="px-4 py-3 text-right tabular-nums">5,426</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Missouri</th><td class="px-4 py-3 text-right tabular-nums">590,131</td><td class="px-4 py-3 text-right tabular-nums">44.4%</td><td class="px-4 py-3 text-right tabular-nums">26,682</td><td class="px-4 py-3 text-right tabular-nums">19,137</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Montana</th><td class="px-4 py-3 text-right tabular-nums">141,011</td><td class="px-4 py-3 text-right tabular-nums">66.3%</td><td class="px-4 py-3 text-right tabular-nums">6,094</td><td class="px-4 py-3 text-right tabular-nums">3,827</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Nebraska</th><td class="px-4 py-3 text-right tabular-nums">193,495</td><td class="px-4 py-3 text-right tabular-nums">47.5%</td><td class="px-4 py-3 text-right tabular-nums">6,767</td><td class="px-4 py-3 text-right tabular-nums">12,739</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Nevada</th><td class="px-4 py-3 text-right tabular-nums">353,621</td><td class="px-4 py-3 text-right tabular-nums">45.0%</td><td class="px-4 py-3 text-right tabular-nums">14,403</td><td class="px-4 py-3 text-right tabular-nums">23,302</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">New Hampshire</th><td class="px-4 py-3 text-right tabular-nums">145,314</td><td class="px-4 py-3 text-right tabular-nums">50.3%</td><td class="px-4 py-3 text-right tabular-nums">6,479</td><td class="px-4 py-3 text-right tabular-nums">6,023</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">New Jersey</th><td class="px-4 py-3 text-right tabular-nums">1,051,630</td><td class="px-4 py-3 text-right tabular-nums">48.8%</td><td class="px-4 py-3 text-right tabular-nums">33,317</td><td class="px-4 py-3 text-right tabular-nums">38,432</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">New Mexico</th><td class="px-4 py-3 text-right tabular-nums">172,113</td><td class="px-4 py-3 text-right tabular-nums">53.3%</td><td class="px-4 py-3 text-right tabular-nums">5,925</td><td class="px-4 py-3 text-right tabular-nums">4,651</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">New York</th><td class="px-4 py-3 text-right tabular-nums">2,378,996</td><td class="px-4 py-3 text-right tabular-nums">46.6%</td><td class="px-4 py-3 text-right tabular-nums">62,612</td><td class="px-4 py-3 text-right tabular-nums">54,510</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">North Carolina</th><td class="px-4 py-3 text-right tabular-nums">1,107,537</td><td class="px-4 py-3 text-right tabular-nums">44.2%</td><td class="px-4 py-3 text-right tabular-nums">36,990</td><td class="px-4 py-3 text-right tabular-nums">52,820</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">North Dakota</th><td class="px-4 py-3 text-right tabular-nums">78,219</td><td class="px-4 py-3 text-right tabular-nums">57.6%</td><td class="px-4 py-3 text-right tabular-nums">2,940</td><td class="px-4 py-3 text-right tabular-nums">6,358</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Ohio</th><td class="px-4 py-3 text-right tabular-nums">1,081,292</td><td class="px-4 py-3 text-right tabular-nums">43.8%</td><td class="px-4 py-3 text-right tabular-nums">24,725</td><td class="px-4 py-3 text-right tabular-nums">31,354</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Oklahoma</th><td class="px-4 py-3 text-right tabular-nums">395,520</td><td class="px-4 py-3 text-right tabular-nums">50.8%</td><td class="px-4 py-3 text-right tabular-nums">12,517</td><td class="px-4 py-3 text-right tabular-nums">16,295</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Oregon</th><td class="px-4 py-3 text-right tabular-nums">417,747</td><td class="px-4 py-3 text-right tabular-nums">53.4%</td><td class="px-4 py-3 text-right tabular-nums">17,826</td><td class="px-4 py-3 text-right tabular-nums">-548</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Pennsylvania</th><td class="px-4 py-3 text-right tabular-nums">1,169,008</td><td class="px-4 py-3 text-right tabular-nums">45.2%</td><td class="px-4 py-3 text-right tabular-nums">32,635</td><td class="px-4 py-3 text-right tabular-nums">46,429</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Rhode Island</th><td class="px-4 py-3 text-right tabular-nums">116,149</td><td class="px-4 py-3 text-right tabular-nums">51.1%</td><td class="px-4 py-3 text-right tabular-nums">5,144</td><td class="px-4 py-3 text-right tabular-nums">4,102</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">South Carolina</th><td class="px-4 py-3 text-right tabular-nums">530,402</td><td class="px-4 py-3 text-right tabular-nums">42.9%</td><td class="px-4 py-3 text-right tabular-nums">19,401</td><td class="px-4 py-3 text-right tabular-nums">25,358</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">South Dakota</th><td class="px-4 py-3 text-right tabular-nums">96,770</td><td class="px-4 py-3 text-right tabular-nums">58.0%</td><td class="px-4 py-3 text-right tabular-nums">3,646</td><td class="px-4 py-3 text-right tabular-nums">6,662</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Tennessee</th><td class="px-4 py-3 text-right tabular-nums">741,196</td><td class="px-4 py-3 text-right tabular-nums">41.5%</td><td class="px-4 py-3 text-right tabular-nums">23,336</td><td class="px-4 py-3 text-right tabular-nums">40,433</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Texas</th><td class="px-4 py-3 text-right tabular-nums">3,517,343</td><td class="px-4 py-3 text-right tabular-nums">44.4%</td><td class="px-4 py-3 text-right tabular-nums">80,833</td><td class="px-4 py-3 text-right tabular-nums">148,641</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Utah</th><td class="px-4 py-3 text-right tabular-nums">371,569</td><td class="px-4 py-3 text-right tabular-nums">45.4%</td><td class="px-4 py-3 text-right tabular-nums">15,470</td><td class="px-4 py-3 text-right tabular-nums">21,320</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Vermont</th><td class="px-4 py-3 text-right tabular-nums">81,949</td><td class="px-4 py-3 text-right tabular-nums">62.1%</td><td class="px-4 py-3 text-right tabular-nums">3,388</td><td class="px-4 py-3 text-right tabular-nums">1,533</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Virginia</th><td class="px-4 py-3 text-right tabular-nums">880,366</td><td class="px-4 py-3 text-right tabular-nums">45.9%</td><td class="px-4 py-3 text-right tabular-nums">31,514</td><td class="px-4 py-3 text-right tabular-nums">34,814</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Washington</th><td class="px-4 py-3 text-right tabular-nums">695,695</td><td class="px-4 py-3 text-right tabular-nums">48.7%</td><td class="px-4 py-3 text-right tabular-nums">22,873</td><td class="px-4 py-3 text-right tabular-nums">27,671</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">West Virginia</th><td class="px-4 py-3 text-right tabular-nums">118,045</td><td class="px-4 py-3 text-right tabular-nums">47.4%</td><td class="px-4 py-3 text-right tabular-nums">6,099</td><td class="px-4 py-3 text-right tabular-nums">5,885</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Wisconsin</th><td class="px-4 py-3 text-right tabular-nums">497,370</td><td class="px-4 py-3 text-right tabular-nums">48.0%</td><td class="px-4 py-3 text-right tabular-nums">17,959</td><td class="px-4 py-3 text-right tabular-nums">15,910</td></tr>
+              <tr class="border-t border-white/10"><th scope="row" class="px-4 py-3 text-left font-medium text-slate-200">Wyoming</th><td class="px-4 py-3 text-right tabular-nums">81,924</td><td class="px-4 py-3 text-right tabular-nums">65.2%</td><td class="px-4 py-3 text-right tabular-nums">3,151</td><td class="px-4 py-3 text-right tabular-nums">1,494</td></tr>
+          </tbody></table></div>
+          <p class="mt-5 text-xs leading-5 text-slate-500">Source: U.S. Small Business Administration, Office of Advocacy, State Small Business Statistics 2025 (published January 30, 2026). Values are state-level aggregates. Net new jobs can be negative.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="lead-access" class="border-y border-white/10 py-20 md:py-24" aria-labelledby="leadAccessTitle">
+      <div class="page-shell">
+        <div class="surface mx-auto max-w-4xl rounded-3xl p-7 text-center sm:p-10">
+          <p class="eyebrow">Subscriber-only contact access</p>
+          <h2 id="leadAccessTitle" class="mt-4 text-3xl font-semibold tracking-[-.04em] sm:text-4xl">Business contact details belong in the private subscriber portal</h2>
+          <p class="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-300">Business names and phone numbers are shown only in the private portal after PayPal verifies an active subscription. The portal provides search and pagination; bulk lead downloads are disabled.</p>
+          <div class="notice mx-auto mt-7 max-w-2xl rounded-2xl p-5 text-left text-sm leading-6"><strong class="block text-base">Private dashboard access is active</strong><span class="mt-1 block">PayPal verifies the subscription before displaying searchable lead records across all 50 states. Sources are not uniform: some locations use EPA facility records, while others use state or local registries. Records are not a complete directory of every business or industry. <a class="text-mint underline underline-offset-4" href="coverage.html">Review sources and limitations</a>.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="py-20 md:py-24">
+      <div class="page-shell">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="eyebrow">Simple agency access</p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-[-.04em] sm:text-4xl">Public market statistics. Private searchable lead records.</h2>
+          <p class="mt-4 text-base leading-7 text-slate-400">Search up to 500 records per connected source across all 50 states. Source types, update schedules, and published contact fields vary. <a class="text-mint underline underline-offset-4" href="coverage.html">See state-by-state coverage and data limits</a>.</p>
+        </div>
+
+
+        <div class="mx-auto mt-10 grid max-w-4xl gap-6 md:grid-cols-2">
+          <article class="pricing-card flex flex-col p-7 sm:p-8">
+            <div class="flex items-start justify-between gap-3">
+              <div><p class="text-lg font-semibold">Free Tier</p><p class="mt-2 text-sm text-slate-400">Explore official state market statistics. No contact records are shown publicly.</p></div>
+              <span class="rounded-full border border-white/15 px-3 py-1 text-xs font-bold uppercase tracking-wide text-slate-400">Limited</span>
+            </div>
+            <p class="mt-7 text-4xl font-semibold tracking-tight">$0<span class="ml-2 text-sm font-medium text-slate-500">/ always</span></p>
+            <ul class="mt-7 flex-1 space-y-4 text-sm text-slate-300">
+              <li class="flex gap-3"><span class="text-emerald">✓</span><span>Browse aggregate SBA market statistics for all 50 states and Washington, D.C.</span></li>
+              <li class="flex gap-3"><span class="text-emerald">✓</span><span>Download the state statistics CSV; it contains no individual business contacts</span></li>
+              <li class="flex gap-3"><span class="text-emerald">✓</span><span>No payment details required</span></li>
+            </ul>
+            <a class="btn-secondary focus-ring mt-8 inline-flex min-h-12 items-center justify-center rounded-xl px-5 font-semibold" href="#state-data">Explore state statistics</a>
+          </article>
+
+          <article class="pricing-card premium-card relative flex flex-col p-7 sm:p-8">
+            <span class="absolute -top-3 right-6 rounded-full border border-emerald/50 bg-slate-900 px-4 py-1.5 text-xs font-extrabold uppercase tracking-wider text-mint shadow-lg">Available</span>
+            <div class="flex items-start justify-between gap-3 pt-2">
+              <div><p class="text-lg font-semibold">Premium Agency Pass</p><p class="mt-2 text-sm text-slate-400">Searchable public business, contractor, certification, and facility records across all 50 states. Contact fields and data quality vary by source. <a class="text-mint underline underline-offset-4" href="coverage.html">View coverage details</a>.</p></div>
+            </div>
+            <p class="mt-6 text-4xl font-semibold tracking-tight">$79<span class="ml-2 text-sm font-medium text-slate-500">/ month</span></p>
+            <ul class="mt-6 space-y-4 text-sm text-slate-200">
+              <li class="flex gap-3"><span class="text-emerald">•</span><span>Up to 500 current records per connected state source</span></li>
+              <li class="flex gap-3"><span class="text-emerald">•</span><span>Published business contact fields and registry details where available</span></li>
+              <li class="flex gap-3"><span class="text-emerald">•</span><span>Search by business, city, phone, or specialty</span></li>
+              <li class="flex gap-3"><span class="text-emerald">•</span><span>Sources refresh every 36 hours when a subscriber browses after the refresh window</span></li>
+            </ul>
+            <a id="paypalSubscribeStart" class="btn-primary mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-xl px-5 font-bold" href="https://vettedmapleads-paypal-hook.kimii-gibs110.chatgpt.site/checkout">Subscribe securely with PayPal · $79/month</a>
+            <p id="paypalCheckoutStatus" class="mt-3 min-h-5 text-center text-sm leading-6 text-slate-400">PayPal verifies your active subscription before the private lead portal opens. Searchable public records are available across all 50 states; coverage is not every business or industry, and source/contact fields vary. <a class="text-mint underline underline-offset-4" href="coverage.html">See source details</a>.</p>
+            <a href="https://vettedmapleads-paypal-hook.kimii-gibs110.chatgpt.site/checkout" class="focus-ring mt-5 inline-block rounded text-sm font-semibold text-mint underline decoration-emerald/50 underline-offset-4 hover:text-white">Already subscribed? Open secure access</a>
+            <div class="my-6 border-t border-white/10"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="community-spotlight" class="border-t border-white/10 bg-slate-950/35 py-16 md:py-20" aria-labelledby="spotlightTitle">
+      <div class="page-shell">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="eyebrow">Free community spotlight</p>
+          <h2 id="spotlightTitle" class="mt-4 text-3xl font-semibold tracking-[-.04em] sm:text-4xl">Meet PrimeSteam Carpet Care</h2>
+          <p class="mt-4 text-base leading-7 text-slate-400">A free, owner-approved listing for a New York area cleaning service. This community spotlight is separate from subscriber lead records.</p>
+        </div>
+        <article class="surface mx-auto mt-8 grid max-w-4xl items-center gap-6 overflow-hidden rounded-3xl p-5 sm:grid-cols-[.85fr_1.15fr] sm:p-7">
+          <img class="w-full rounded-2xl border border-white/10 bg-black object-contain" src="/assets/primesteam-carpet-care-logo.jpeg" alt="PrimeSteam Carpet Care logo" width="1200" height="480" loading="lazy">
+          <div>
+            <span class="pill inline-flex rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide">Free business listing</span>
+            <h3 class="mt-4 text-2xl font-semibold">PrimeSteam Carpet Care</h3>
+            <p class="mt-2 text-sm text-slate-400">Carpet, upholstery, tile and grout cleaning, and water restoration · New York &amp; surrounding areas</p>
+            <a class="btn-primary focus-ring mt-5 inline-flex min-h-11 items-center justify-center rounded-xl px-5 font-bold" href="primesteam-carpet-care.html">View business profile</a>
+            <p class="mt-3 text-xs leading-5 text-slate-500">The listing is provided with the business owner’s permission. VettedMapLeads does not guarantee jobs or customer inquiries.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="faq" class="border-t border-white/10 bg-slate-950/35 py-20 md:py-24" aria-labelledby="faqTitle">
+      <div class="page-shell">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="eyebrow">Frequently asked questions</p>
+          <h2 id="faqTitle" class="mt-4 text-3xl font-semibold tracking-[-.04em] sm:text-4xl">Build a better local prospect list.</h2>
+          <p class="mt-4 text-base leading-7 text-slate-400">Answers for agencies and independent experts looking for relevant local business opportunities.</p>
+        </div>
+
+        <div class="mx-auto mt-10 max-w-4xl space-y-3">
+          <article class="surface overflow-hidden rounded-2xl">
+            <h3 class="m-0">
+              <button id="faqToggle1" class="focus-ring flex w-full items-center justify-between gap-5 px-5 py-5 text-left text-base font-semibold leading-7 text-white sm:px-6" type="button" data-faq-toggle aria-expanded="false" aria-controls="faqPanel1">
+                <span>How do I find local businesses that don't have a website?</span>
+                <svg data-faq-icon class="h-5 w-5 shrink-0 text-emerald transition-transform duration-300" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 7.5 5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </h3>
+            <div id="faqPanel1" class="faq-panel grid transition-[grid-template-rows,opacity] duration-300 ease-in-out" role="region" aria-labelledby="faqToggle1" aria-hidden="true" inert>
+              <div><p class="px-5 pb-5 text-sm leading-7 text-slate-300 sm:px-6">VettedMapLeads does not identify businesses without websites. Subscribers can search public business and contractor records across all 50 states, plus Washington, D.C., Puerto Rico, Guam, and the U.S. Virgin Islands as additional jurisdictions, then check each company’s website independently. Phone and email fields vary by source.</p></div>
+            </div>
+          </article>
+
+          <article class="surface overflow-hidden rounded-2xl">
+            <h3 class="m-0">
+              <button id="faqToggle2" class="focus-ring flex w-full items-center justify-between gap-5 px-5 py-5 text-left text-base font-semibold leading-7 text-white sm:px-6" type="button" data-faq-toggle aria-expanded="false" aria-controls="faqPanel2">
+                <span>What is the fastest way to get web design clients with zero budget?</span>
+                <svg data-faq-icon class="h-5 w-5 shrink-0 text-emerald transition-transform duration-300" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 7.5 5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </h3>
+            <div id="faqPanel2" class="faq-panel grid transition-[grid-template-rows,opacity] duration-300 ease-in-out" role="region" aria-labelledby="faqToggle2" aria-hidden="true" inert>
+              <div><p class="px-5 pb-5 text-sm leading-7 text-slate-300 sm:px-6">Research a specific market, verify the prospect’s website and service fit, then send a relevant offer. VettedMapLeads offers searchable public records across all 50 states; source types and contact fields vary, and no record confirms that a business needs marketing.</p></div>
+            </div>
+          </article>
+
+          <article class="surface overflow-hidden rounded-2xl">
+            <h3 class="m-0">
+              <button id="faqToggle3" class="focus-ring flex w-full items-center justify-between gap-5 px-5 py-5 text-left text-base font-semibold leading-7 text-white sm:px-6" type="button" data-faq-toggle aria-expanded="false" aria-controls="faqPanel3">
+                <span>Where can I download a pre-vetted Google Maps lead list in a CSV format?</span>
+                <svg data-faq-icon class="h-5 w-5 shrink-0 text-emerald transition-transform duration-300" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 7.5 5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </h3>
+            <div id="faqPanel3" class="faq-panel grid transition-[grid-template-rows,opacity] duration-300 ease-in-out" role="region" aria-labelledby="faqToggle3" aria-hidden="true" inert>
+              <div><p class="px-5 pb-5 text-sm leading-7 text-slate-300 sm:px-6">VettedMapLeads does not sell Google Maps exports. Subscribers get searchable public business, contractor, certification, and facility records across all 50 states; source types and contact fields vary.</p></div>
+            </div>
+          </article>
+
+          <article class="surface overflow-hidden rounded-2xl">
+            <h3 class="m-0">
+              <button id="faqToggle4" class="focus-ring flex w-full items-center justify-between gap-5 px-5 py-5 text-left text-base font-semibold leading-7 text-white sm:px-6" type="button" data-faq-toggle aria-expanded="false" aria-controls="faqPanel4">
+                <span>How do marketing agencies target local businesses with bad online reviews?</span>
+                <svg data-faq-icon class="h-5 w-5 shrink-0 text-emerald transition-transform duration-300" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 7.5 5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </h3>
+            <div id="faqPanel4" class="faq-panel grid transition-[grid-template-rows,opacity] duration-300 ease-in-out" role="region" aria-labelledby="faqToggle4" aria-hidden="true" inert>
+              <div><p class="px-5 pb-5 text-sm leading-7 text-slate-300 sm:px-6">Use sources whose terms permit review analysis and verify each business before outreach. VettedMapLeads does not provide review ratings; its paid feed contains public registry and facility records, not review data. Source types and contact fields vary by location.</p></div>
+            </div>
+          </article>
+
+          <article class="surface overflow-hidden rounded-2xl">
+            <h3 class="m-0">
+              <button id="faqToggle5" class="focus-ring flex w-full items-center justify-between gap-5 px-5 py-5 text-left text-base font-semibold leading-7 text-white sm:px-6" type="button" data-faq-toggle aria-expanded="false" aria-controls="faqPanel5">
+                <span>Can I scrape business phone numbers and emails from Google Maps on autopilot?</span>
+                <svg data-faq-icon class="h-5 w-5 shrink-0 text-emerald transition-transform duration-300" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 7.5 5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </h3>
+            <div id="faqPanel5" class="faq-panel grid transition-[grid-template-rows,opacity] duration-300 ease-in-out" role="region" aria-labelledby="faqToggle5" aria-hidden="true" inert>
+              <div><p class="px-5 pb-5 text-sm leading-7 text-slate-300 sm:px-6">Do not assume automated extraction is allowed. Use sources whose terms permit collection and reuse, and follow privacy and outreach rules. VettedMapLeads does not scrape Google Maps, and this public page contains no business contact records.</p></div>
+            </div>
+          </article>
+
+          <article class="surface overflow-hidden rounded-2xl">
+            <h3 class="m-0">
+              <button id="faqToggle6" class="focus-ring flex w-full items-center justify-between gap-5 px-5 py-5 text-left text-base font-semibold leading-7 text-white sm:px-6" type="button" data-faq-toggle aria-expanded="false" aria-controls="faqPanel6">
+                <span>How do I find roofers, plumbers, and contractors who need SEO services?</span>
+                <svg data-faq-icon class="h-5 w-5 shrink-0 text-emerald transition-transform duration-300" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 7.5 5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </h3>
+            <div id="faqPanel6" class="faq-panel grid transition-[grid-template-rows,opacity] duration-300 ease-in-out" role="region" aria-labelledby="faqToggle6" aria-hidden="true" inert>
+              <div><p class="px-5 pb-5 text-sm leading-7 text-slate-300 sm:px-6">Search the subscriber dashboard by business, city, phone, or specialty. VettedMapLeads includes up to 500 records per connected source across all 50 states. Registry listings do not establish that a business needs SEO; sources, contact fields, and coverage limits vary. See the coverage notes for details.</p></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 py-8">
+    <div class="page-shell flex flex-col gap-3 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+      <p>© <span id="currentYear"></span> VettedMapLeads. Built for local growth teams.</p>
+      <p><a class="hover:text-slate-300" href="contact.html">Contact us</a> · <a class="hover:text-slate-300" href="primesteam-carpet-care.html">Free community spotlight</a> · <a class="hover:text-slate-300" href="coverage.html">Coverage notes</a></p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+      var stateStats = {"Alabama":{"smallBusinesses":465610,"employmentShare":46.0,"establishmentsOpened":14917,"netNewJobs":4814},"Alaska":{"smallBusinesses":77814,"employmentShare":54.2,"establishmentsOpened":2065,"netNewJobs":4814},"Arizona":{"smallBusinesses":706640,"employmentShare":42.6,"establishmentsOpened":26603,"netNewJobs":80016},"Arkansas":{"smallBusinesses":292728,"employmentShare":46.1,"establishmentsOpened":9630,"netNewJobs":14245},"California":{"smallBusinesses":4340784,"employmentShare":47.4,"establishmentsOpened":132020,"netNewJobs":86885},"Colorado":{"smallBusinesses":730887,"employmentShare":48.6,"establishmentsOpened":30729,"netNewJobs":6384},"Connecticut":{"smallBusinesses":381129,"employmentShare":48.1,"establishmentsOpened":13718,"netNewJobs":10840},"Delaware":{"smallBusinesses":111346,"employmentShare":50.6,"establishmentsOpened":4378,"netNewJobs":5323},"District of Columbia":{"smallBusinesses":82666,"employmentShare":49.1,"establishmentsOpened":5817,"netNewJobs":2678},"Florida":{"smallBusinesses":3485976,"employmentShare":39.6,"establishmentsOpened":100178,"netNewJobs":139887},"Georgia":{"smallBusinesses":1374972,"employmentShare":42.5,"establishmentsOpened":38952,"netNewJobs":45950},"Hawaii":{"smallBusinesses":144375,"employmentShare":49.6,"establishmentsOpened":4265,"netNewJobs":129},"Idaho":{"smallBusinesses":207670,"employmentShare":56.0,"establishmentsOpened":10350,"netNewJobs":17233},"Illinois":{"smallBusinesses":1353957,"employmentShare":43.7,"establishmentsOpened":33940,"netNewJobs":14131},"Indiana":{"smallBusinesses":591671,"employmentShare":43.2,"establishmentsOpened":15661,"netNewJobs":23008},"Iowa":{"smallBusinesses":289962,"employmentShare":46.0,"establishmentsOpened":8689,"netNewJobs":12573},"Kansas":{"smallBusinesses":273419,"employmentShare":48.9,"establishmentsOpened":10314,"netNewJobs":10601},"Kentucky":{"smallBusinesses":393860,"employmentShare":42.6,"establishmentsOpened":12964,"netNewJobs":22043},"Louisiana":{"smallBusinesses":511235,"employmentShare":54.1,"establishmentsOpened":11047,"netNewJobs":5470},"Maine":{"smallBusinesses":160215,"employmentShare":54.5,"establishmentsOpened":6025,"netNewJobs":7026},"Maryland":{"smallBusinesses":696710,"employmentShare":47.9,"establishmentsOpened":17678,"netNewJobs":16613},"Massachusetts":{"smallBusinesses":756096,"employmentShare":44.7,"establishmentsOpened":21452,"netNewJobs":4824},"Michigan":{"smallBusinesses":983079,"employmentShare":47.7,"establishmentsOpened":24975,"netNewJobs":27947},"Minnesota":{"smallBusinesses":560428,"employmentShare":45.8,"establishmentsOpened":15229,"netNewJobs":617},"Mississippi":{"smallBusinesses":294768,"employmentShare":47.0,"establishmentsOpened":6915,"netNewJobs":5426},"Missouri":{"smallBusinesses":590131,"employmentShare":44.4,"establishmentsOpened":26682,"netNewJobs":19137},"Montana":{"smallBusinesses":141011,"employmentShare":66.3,"establishmentsOpened":6094,"netNewJobs":3827},"Nebraska":{"smallBusinesses":193495,"employmentShare":47.5,"establishmentsOpened":6767,"netNewJobs":12739},"Nevada":{"smallBusinesses":353621,"employmentShare":45.0,"establishmentsOpened":14403,"netNewJobs":23302},"New Hampshire":{"smallBusinesses":145314,"employmentShare":50.3,"establishmentsOpened":6479,"netNewJobs":6023},"New Jersey":{"smallBusinesses":1051630,"employmentShare":48.8,"establishmentsOpened":33317,"netNewJobs":38432},"New Mexico":{"smallBusinesses":172113,"employmentShare":53.3,"establishmentsOpened":5925,"netNewJobs":4651},"New York":{"smallBusinesses":2378996,"employmentShare":46.6,"establishmentsOpened":62612,"netNewJobs":54510},"North Carolina":{"smallBusinesses":1107537,"employmentShare":44.2,"establishmentsOpened":36990,"netNewJobs":52820},"North Dakota":{"smallBusinesses":78219,"employmentShare":57.6,"establishmentsOpened":2940,"netNewJobs":6358},"Ohio":{"smallBusinesses":1081292,"employmentShare":43.8,"establishmentsOpened":24725,"netNewJobs":31354},"Oklahoma":{"smallBusinesses":395520,"employmentShare":50.8,"establishmentsOpened":12517,"netNewJobs":16295},"Oregon":{"smallBusinesses":417747,"employmentShare":53.4,"establishmentsOpened":17826,"netNewJobs":-548},"Pennsylvania":{"smallBusinesses":1169008,"employmentShare":45.2,"establishmentsOpened":32635,"netNewJobs":46429},"Rhode Island":{"smallBusinesses":116149,"employmentShare":51.1,"establishmentsOpened":5144,"netNewJobs":4102},"South Carolina":{"smallBusinesses":530402,"employmentShare":42.9,"establishmentsOpened":19401,"netNewJobs":25358},"South Dakota":{"smallBusinesses":96770,"employmentShare":58.0,"establishmentsOpened":3646,"netNewJobs":6662},"Tennessee":{"smallBusinesses":741196,"employmentShare":41.5,"establishmentsOpened":23336,"netNewJobs":40433},"Texas":{"smallBusinesses":3517343,"employmentShare":44.4,"establishmentsOpened":80833,"netNewJobs":148641},"Utah":{"smallBusinesses":371569,"employmentShare":45.4,"establishmentsOpened":15470,"netNewJobs":21320},"Vermont":{"smallBusinesses":81949,"employmentShare":62.1,"establishmentsOpened":3388,"netNewJobs":1533},"Virginia":{"smallBusinesses":880366,"employmentShare":45.9,"establishmentsOpened":31514,"netNewJobs":34814},"Washington":{"smallBusinesses":695695,"employmentShare":48.7,"establishmentsOpened":22873,"netNewJobs":27671},"West Virginia":{"smallBusinesses":118045,"employmentShare":47.4,"establishmentsOpened":6099,"netNewJobs":5885},"Wisconsin":{"smallBusinesses":497370,"employmentShare":48.0,"establishmentsOpened":17959,"netNewJobs":15910},"Wyoming":{"smallBusinesses":81924,"employmentShare":65.2,"establishmentsOpened":3151,"netNewJobs":1494}};
+      var number = new Intl.NumberFormat('en-US');
+      var filter = document.getElementById('stateFilter');
+      var tableBody = document.getElementById('stateStatsTable');
+      var status = document.getElementById('stateDataStatus');
+      var stateRows = Array.prototype.slice.call(tableBody.querySelectorAll('tr'));
+      filter.addEventListener('input', function () {
+        var query = filter.value.trim().toLocaleLowerCase();
+        var visible = 0;
+        stateRows.forEach(function (row) {
+          var match = row.cells[0].textContent.toLocaleLowerCase().includes(query);
+          row.hidden = !match;
+          if (match) visible++;
+        });
+        status.textContent = visible ? (query ? 'Showing ' + visible + ' matching location' + (visible === 1 ? '.' : 's.') : 'Showing all 51 locations (50 states and Washington, D.C.).') : 'No state matched that search.';
+      });
+      function csvCell(value) { return '"' + String(value).replace(/"/g, '""') + '"'; }
+      function downloadStatsCsv() {
+        var lines = [['State or district','Small businesses','Employment share (%)','Establishments opened','Net new jobs']];
+        Object.keys(stateStats).forEach(function (state) {
+          var item = stateStats[state];
+          lines.push([state,item.smallBusinesses,item.employmentShare,item.establishmentsOpened,item.netNewJobs]);
+        });
+        var blob = new Blob(['\uFEFF' + lines.map(function (row) { return row.map(csvCell).join(','); }).join('\r\n')], {type:'text/csv;charset=utf-8'});
+        var url = URL.createObjectURL(blob);
+        var link = document.createElement('a'); link.href = url; link.download = 'VettedMapLeads_SBA_State_Statistics_2025.csv';
+        document.body.appendChild(link); link.click(); link.remove(); window.setTimeout(function(){URL.revokeObjectURL(url);},1000);
+      }
+      document.querySelectorAll('[data-download-sba-csv]').forEach(function (button) { button.addEventListener('click', downloadStatsCsv); });
+      document.querySelectorAll('[data-faq-toggle]').forEach(function(button){button.addEventListener('click',function(){
+        var isOpen=button.getAttribute('aria-expanded')==='true'; var panel=document.getElementById(button.getAttribute('aria-controls')); if(!panel)return;
+        button.setAttribute('aria-expanded',String(!isOpen)); panel.setAttribute('aria-hidden',String(isOpen)); if(isOpen)panel.setAttribute('inert','');else panel.removeAttribute('inert'); panel.classList.toggle('is-open',!isOpen);
+        var icon=button.querySelector('[data-faq-icon]'); if(icon)icon.classList.toggle('rotate-180',!isOpen);
+      });});
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    }());
+  </script>
+</body>
+</html>
