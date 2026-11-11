@@ -90,6 +90,10 @@
     body { margin: 0; min-width: 320px; background: #0B0F19; color: #F8FAFC; }
     a { color: inherit; }
     .page-shell { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .site-header-layout { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px; padding-block: 20px; }
+    .site-main-nav { display: flex; flex: 0 0 100%; order: 3; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px 40px; padding-top: 16px; border-top: 1px solid rgba(148,163,184,.12); }
+    .site-main-nav a { display: inline-flex; align-items: center; min-height: 44px; white-space: nowrap; }
+    @media (max-width: 640px) { .site-header-layout { gap: 16px; } .site-main-nav { justify-content: flex-start; column-gap: 24px; row-gap: 8px; } }
     .surface { background: linear-gradient(145deg, rgba(17,24,39,.96), rgba(15,23,42,.84)); border: 1px solid rgba(148,163,184,.16); box-shadow: 0 22px 70px rgba(0,0,0,.23); }
     .soft-grid { background-image: radial-gradient(rgba(16,185,129,.16) 1px, transparent 1px); background-size: 24px 24px; }
     .hero-glow { background: radial-gradient(ellipse at 18% 0%, rgba(16,185,129,.12), transparent 43%); }
@@ -122,12 +126,12 @@
 </head>
 <body class="antialiased">
   <header class="border-b border-white/10">
-    <div class="page-shell flex h-[76px] items-center justify-between">
+    <div class="page-shell site-header-layout">
       <a class="focus-ring flex items-center gap-3 rounded-lg" href="#top" aria-label="VettedMapLeads home">
         <span class="grid h-10 w-10 place-items-center rounded-xl bg-emerald text-lg font-black tracking-tight text-ink">V</span>
         <span class="text-lg font-bold tracking-tight">VettedMap<span class="text-emerald">Leads</span></span>
       </a>
-      <nav class="hidden items-center gap-8 text-sm font-medium text-slate-300 sm:flex" aria-label="Main navigation">
+      <nav class="site-main-nav text-sm font-medium text-slate-300" aria-label="Main navigation">
         <a class="focus-ring rounded hover:text-white" href="#state-data">Free statistics</a>
         <a class="focus-ring rounded hover:text-white" href="#lead-access">What you get</a>
         <a class="focus-ring rounded hover:text-white" href="#pricing">Pricing</a>
